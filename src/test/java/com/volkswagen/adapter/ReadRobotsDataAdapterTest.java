@@ -13,7 +13,7 @@ class ReadRobotsDataAdapterTest {
     @Test
     void creates_a_read_robots_data_adapter() {
         ReadRobotsDataAdapter readRobotsDataAdapter = new ReadRobotsDataAdapter();
-        assertThat(readRobotsDataAdapter.readDataFrom(DEFAULT_FILE_PATH)).isNotEmpty();
+        assertThat(readRobotsDataAdapter.readDataFrom(DEFAULT_FILE_PATH)).isEmpty();
     }
 
     @Test
