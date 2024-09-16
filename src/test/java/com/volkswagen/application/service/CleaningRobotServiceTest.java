@@ -1,7 +1,6 @@
 package com.volkswagen.application.service;
 
 import com.volkswagen.adapter.console.out.ConsolePrintAdapter;
-import com.volkswagen.application.exception.ObstacleException;
 import com.volkswagen.application.port.in.CleaningRobotService;
 import com.volkswagen.application.port.in.RobotCommand;
 import com.volkswagen.application.port.in.RobotConfiguration;
@@ -18,7 +17,7 @@ import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CleaningRobotServiceTest {
+class CleaningRobotServiceTest {
 
     private final RobotsResultPort robotsResultPort = new ConsolePrintAdapter();
 

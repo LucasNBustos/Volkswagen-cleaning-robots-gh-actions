@@ -1,15 +1,13 @@
 package com.volkswagen.application.exception;
 
 import com.volkswagen.domain.Robot;
-import com.volkswagen.domain.RobotPosition;
 import com.volkswagen.domain.Workplace;
 
 public class ObstacleException extends RuntimeException {
-
     private final Robot robot;
 
     private final Workplace workplace;
-
+    
     private final int x;
 
     private final int y;
