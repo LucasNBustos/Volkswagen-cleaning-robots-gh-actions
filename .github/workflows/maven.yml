@@ -16,8 +16,13 @@ on:
 
 jobs:
   build:
-
+    name: Java CI Testing
     runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: read
+      checks: write
 
     steps:
     - uses: actions/checkout@v4
@@ -33,4 +38,13 @@ jobs:
       
     - name: Run tests
       run: mvn test
-
+      
+    - name: Publish Check
+      uses: LouisBrunner/checks-action@v2.0.0
+      if: always()
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test Maven
+        conclusion: ${{ job.status }}
+        output: |
+            {"summary":"${{ steps.test.outputs.summary }}"}
