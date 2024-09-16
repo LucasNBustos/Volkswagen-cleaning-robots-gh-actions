@@ -1,9 +1,7 @@
 package com.volkswagen.domain;
 
-import com.volkswagen.application.exception.ObstacleException;
 import com.volkswagen.application.port.in.RobotCommand;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 import static com.volkswagen.domain.RobotOrientation.*;
