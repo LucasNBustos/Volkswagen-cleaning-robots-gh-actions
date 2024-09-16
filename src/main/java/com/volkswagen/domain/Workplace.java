@@ -52,25 +52,8 @@ public class Workplace {
     }
 
     public boolean hasObstacleIn(int x, int y) {
-
-        // Si eso ocurre,   retorna true.  De otro modo,  devuelve falso.
-
-        // Implementación forEach
-        // return hasObstacleIn_prehistorico(x, y);
-
-        // Source [finishedRobots] -> Intermediate [] -> Terminal [anyMatch]
-
         return finishedRobots.stream()
                 .anyMatch(robot -> robot.position().x() == x && robot.position().y() == y);
-    }
-
-    private boolean hasObstacleIn_prehistorico(int x, int y) {
-        for (var robot : finishedRobots) {
-            if (robot.position().x() == x && robot.position().y() == y) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public void addFinishedRobot(Robot robot) {
