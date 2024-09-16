@@ -33,4 +33,13 @@ jobs:
       
     - name: Run tests
       run: mvn test
-
+      
+    - name: Publish Check
+      uses: LouisBrunner/checks-action@v2.0.0
+      if: always()
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test Maven
+        conclusion: ${{ job.status }}
+        output: |
+            {"summary":"${{ steps.test.outputs.summary }}"}
