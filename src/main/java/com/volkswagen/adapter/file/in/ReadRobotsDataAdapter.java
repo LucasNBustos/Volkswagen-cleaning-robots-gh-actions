@@ -31,6 +31,7 @@ public class ReadRobotsDataAdapter {
         InputStream inputStream = classLoader.getResourceAsStream(filePath);
         try {
             if (inputStream != null && inputStream.available() > 0) {
+                System.out.println("log if");
                 return parseFile(inputStream);
             }
         } catch (IOException e) {
